@@ -1,4 +1,4 @@
-let arr = [10,20,30,40,50,80, 90, 'infi','infi','infi','infi','infi','infi'];
+let arr = [10,20,30,40,50,80,'infi','infi','infi','infi','infi','infi'];
 
 function binarySearchMethod(arr) {
     let start = 0;
