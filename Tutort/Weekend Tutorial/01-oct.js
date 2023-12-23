@@ -117,16 +117,49 @@ function search(head, value) {
 // TC: O(N)
 // SC: O(1)
 
-// Q-3:[MS] Kth node from the beginning
+// Q-4:[MS] Kth node from the beginning
 function kthNodeFromBeginning(head, k) {
+  let count = 0;
   let current = head;
   while (current !== null) {
-    if (current.data == value) {
-      return true;
+    count++;
+    if (count == k) {
+      return current.data;
     }
     current = current.next;
   }
-  return false;
+  return -1;
 }
 // TC: O(N)
 // SC: O(1)
+
+// Q-5:[MS] Kth node from the End
+
+// https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+// 19. Remove Nth Node From End of List
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function (head, n) {
+  const curr = head;
+  let count = 0;
+  while (curr != null) {
+    if (n == count) {
+      curr = curr.next.next;
+    } else {
+      curr = curr.next;
+    }
+    count--;
+  }
+  return curr;
+};
